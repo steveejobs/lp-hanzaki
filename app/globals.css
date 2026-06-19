@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf2;
+  --foreground: #171413;
+  --hanzaki-red: #d3232a;
+  --hanzaki-black: #11100f;
+  --hanzaki-graphite: #272321;
+  --hanzaki-line: #e8ddd0;
+  --hanzaki-warm: #b77a3f;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; }
+
+@layer components {
+  .container-page {
+    width: min(100% - 32px, 1180px);
+    margin-inline: auto;
+  }
+
+  .btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 999px;
+    padding: 13px 20px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    transition: transform 300ms ease, background-color 300ms ease, border-color 300ms ease, color 300ms ease;
+  }
+
+  .btn-primary {
+    background: var(--hanzaki-red);
+    color: white;
+    box-shadow: 0 16px 36px rgba(211, 35, 42, 0.22);
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); background: #ac1820; }
+  .btn-dark { background: var(--hanzaki-black); color: white; }
+  .btn-dark:hover { transform: translateY(-2px); background: #302b29; }
+
+  .btn-outline {
+    border: 1px solid rgba(17, 16, 15, 0.16);
+    background: rgba(255, 255, 255, 0.76);
+    color: var(--hanzaki-black);
+  }
+
+  .btn-outline:hover { transform: translateY(-2px); border-color: var(--hanzaki-black); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--hanzaki-red);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  .section-pad { padding-block: 64px; }
+  .fine-border { border: 1px solid rgba(17, 16, 15, 0.1); }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  .in-view-reveal {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+    transition: opacity 680ms cubic-bezier(0.22, 1, 0.36, 1), transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .in-view-reveal.is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.hero-warm-reveal { animation: warmHeroIn 900ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes warmHeroIn {
+  from { opacity: 0; transform: scale(1.018); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.ig-rise {
+  animation: igRise 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--ig-delay, 0ms);
+}
+
+@keyframes igRise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.ig-marquee,
+.gallery-marquee {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.ig-marquee-left { animation: marqueeLeft 36s linear infinite; }
+.ig-testimonials-left { animation: marqueeLeft 38s linear infinite; }
+.ig-testimonials-right { animation: marqueeRight 44s linear infinite; }
+.gallery-marquee-mobile { animation-duration: 40s; }
+.gallery-marquee-desktop { animation-duration: 92s; }
+.gallery-marquee-left { animation-name: marqueeLeft; }
+.gallery-marquee-right { animation-name: marqueeRight; }
+
+@keyframes marqueeLeft {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(-50% - 8px), 0, 0); }
+}
+
+@keyframes marqueeRight {
+  from { transform: translate3d(calc(-50% - 8px), 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.ig-video-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.97);
+  transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1), transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ig-video-reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .in-view-reveal, .ig-rise, .ig-video-reveal { opacity: 1 !important; transform: none !important; }
+  .gallery-marquee, .ig-marquee { animation: none !important; transform: none !important; }
+}
+
+@media (max-width: 480px) {
+  .container-page { width: min(100% - 24px, 1180px); }
+  .section-pad { padding-block: 48px; }
+  .btn { width: 100%; min-height: 50px; padding-inline: 16px; }
+}
