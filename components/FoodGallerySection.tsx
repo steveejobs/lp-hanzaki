@@ -97,7 +97,9 @@ function GalleryLoop({
 }
 
 export function FoodGallerySection() {
-  const galleryItems = foodGalleryImages.map((item) => ({
+  const galleryItems = Array.from(
+    new Map(foodGalleryImages.map((item) => [item.src, item])).values(),
+  ).map((item) => ({
     src: item.src,
     alt: item.alt,
   }));
@@ -119,7 +121,8 @@ export function FoodGallerySection() {
             </h2>
           </div>
           <p className="max-w-xl text-base font-semibold leading-7 text-neutral-600 md:justify-self-end md:text-lg">
-            Do sushi ao prato quente, uma seleção variada para jantar, pedir ou compartilhar.
+            Do sushi ao prato quente, uma seleção variada para jantar, pedir ou
+            compartilhar.
           </p>
         </div>
       </div>
@@ -130,15 +133,8 @@ export function FoodGallerySection() {
         </div>
 
         <div className="hidden space-y-4 md:block">
-          <GalleryLoop
-            items={firstRow}
-            direction="left"
-          />
-          <GalleryLoop
-            items={secondRow}
-            direction="right"
-            indexOffset={2}
-          />
+          <GalleryLoop items={firstRow} direction="left" />
+          <GalleryLoop items={secondRow} direction="right" indexOffset={2} />
         </div>
       </div>
 
