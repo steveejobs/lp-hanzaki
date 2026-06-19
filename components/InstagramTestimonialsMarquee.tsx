@@ -10,7 +10,9 @@ type InstagramTestimonialsMarqueeProps = {
 function ReviewCard({ review }: { review: HanzakiTestimonial }) {
   return (
     <article className="h-[136px] w-[280px] shrink-0 rounded-[22px] border border-black/10 bg-white p-4 shadow-[0_10px_24px_rgba(16,16,16,0.055)]">
-      <span className="block h-1.5 w-8 rounded-full bg-[var(--hanzaki-red)]" />
+      <span className="block text-sm font-black leading-none text-[var(--hanzaki-red)]">
+        ★★★★★
+      </span>
       <p className="mt-3 line-clamp-3 text-sm font-bold leading-6 text-neutral-700">
         {review.text}
       </p>
