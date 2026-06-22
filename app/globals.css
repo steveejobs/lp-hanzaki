@@ -229,6 +229,556 @@ img {
   }
 }
 
+.hanzaki-page-shell {
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(211, 35, 42, 0.24), transparent 28rem),
+    radial-gradient(circle at 86% 18%, rgba(245, 158, 11, 0.18), transparent 26rem),
+    linear-gradient(145deg, #0f0d0c 0%, #171312 46%, #241d19 100%);
+  color: #fffaf2;
+}
+
+.hanzaki-page-section {
+  position: relative;
+  min-height: 100svh;
+  padding: 72px 0 56px;
+}
+
+.hanzaki-page-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.hanzaki-page-hero {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.hanzaki-page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: #ffb4a8;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hanzaki-page-eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: #dc2626;
+}
+
+.hanzaki-page-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.9rem);
+  font-weight: 950;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.hanzaki-page-hero p:last-child {
+  max-width: 650px;
+  margin: 24px 0 0;
+  color: rgba(255, 250, 242, 0.72);
+  font-size: clamp(1rem, 2vw, 1.28rem);
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.hanzaki-page-playground {
+  position: relative;
+  z-index: 1;
+  margin-top: 36px;
+  padding-top: 112px;
+}
+
+.hanzaki-page-cards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.hanzaki-page-card {
+  position: relative;
+  min-height: 238px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.13);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.095), rgba(255, 250, 242, 0.035)),
+    rgba(16, 13, 12, 0.76);
+  color: #fffaf2;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  text-align: left;
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 420ms ease,
+    background-color 420ms ease,
+    box-shadow 520ms ease;
+}
+
+.hanzaki-page-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 18px 18px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--experience-color);
+  opacity: 0.78;
+  transform: scaleX(0.38);
+  transform-origin: left center;
+  transition:
+    opacity 420ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hanzaki-page-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, var(--experience-color), transparent 58%);
+  opacity: 0;
+  transition: opacity 520ms ease;
+}
+
+.hanzaki-page-card:focus-visible {
+  outline: 2px solid #fffaf2;
+  outline-offset: 4px;
+}
+
+.hanzaki-page-card:hover,
+.hanzaki-page-card.is-active {
+  transform: translate3d(0, -6px, 0);
+  border-color: color-mix(in srgb, var(--experience-color) 54%, rgba(255, 250, 242, 0.18));
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.28),
+    0 0 34px color-mix(in srgb, var(--experience-color) 26%, transparent);
+}
+
+.hanzaki-page-card.is-active::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.hanzaki-page-card.is-active::after {
+  opacity: 0.16;
+}
+
+.hanzaki-page-card-kicker,
+.hanzaki-page-card-title,
+.hanzaki-page-card-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hanzaki-page-card-kicker {
+  position: absolute;
+  left: 22px;
+  top: 20px;
+  color: color-mix(in srgb, var(--experience-color) 74%, white);
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.hanzaki-page-card-title {
+  margin-bottom: 14px;
+  font-size: clamp(1.2rem, 2vw, 1.62rem);
+  font-weight: 950;
+  line-height: 1.05;
+}
+
+.hanzaki-page-card-text {
+  min-height: 82px;
+  color: rgba(255, 250, 242, 0.67);
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.hanzaki-page-salamander {
+  --salamander-fill: #ffffff;
+  --salamander-accent: #dc2626;
+  --salamander-glow: #dc2626;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 154px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 860ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease,
+    filter 620ms ease;
+  will-change: transform;
+}
+
+.hanzaki-page-salamander.is-ready {
+  opacity: 1;
+}
+
+.hanzaki-page-salamander-aura {
+  position: absolute;
+  left: 21%;
+  right: 10%;
+  top: 38%;
+  height: 35%;
+  border-radius: 999px;
+  background: var(--salamander-glow);
+  filter: blur(22px);
+  opacity: 0.18;
+  transform: translate3d(0, 10px, 0);
+  transition:
+    background-color 620ms ease,
+    opacity 620ms ease;
+  animation: hanzakiGlowPulse 3.8s ease-in-out infinite;
+}
+
+.hanzaki-page-salamander-svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter:
+    drop-shadow(0 12px 18px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 10px var(--salamander-glow));
+}
+
+.hanzaki-page-salamander-body,
+.hanzaki-page-salamander-head {
+  animation: hanzakiBodyBreathe 3.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hanzaki-page-salamander-tail {
+  animation: hanzakiTailIdle 2.9s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 8% 50%;
+}
+
+.hanzaki-page-salamander-accent {
+  fill: none;
+  stroke: var(--salamander-accent);
+  stroke-linecap: round;
+  stroke-width: 3.8;
+  opacity: 0.58;
+  transition:
+    stroke 620ms ease,
+    opacity 620ms ease;
+}
+
+.hanzaki-page-salamander-highlight {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.68);
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.hanzaki-page-salamander-line,
+.hanzaki-page-salamander-whisker {
+  fill: none;
+  stroke: color-mix(in srgb, var(--salamander-accent) 48%, #ffffff);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  opacity: 0.58;
+  transition: stroke 620ms ease;
+}
+
+.hanzaki-page-salamander-limb {
+  fill: none;
+  stroke: var(--salamander-fill);
+  stroke-linecap: round;
+  stroke-width: 9;
+}
+
+.hanzaki-page-salamander-toes {
+  fill: none;
+  stroke: color-mix(in srgb, var(--salamander-accent) 36%, #ffffff);
+  stroke-linecap: round;
+  stroke-width: 4.2;
+  opacity: 0.72;
+  transition: stroke 620ms ease;
+}
+
+.hanzaki-page-salamander-leg {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hanzaki-page-salamander.is-walking .hanzaki-page-leg-front-left,
+.hanzaki-page-salamander.is-walking .hanzaki-page-leg-back-right {
+  animation: hanzakiLegForward 360ms ease-in-out infinite alternate;
+}
+
+.hanzaki-page-salamander.is-walking .hanzaki-page-leg-front-right,
+.hanzaki-page-salamander.is-walking .hanzaki-page-leg-back-left {
+  animation: hanzakiLegBack 360ms ease-in-out infinite alternate;
+}
+
+.hanzaki-page-salamander.is-walking .hanzaki-page-salamander-body,
+.hanzaki-page-salamander.is-walking .hanzaki-page-salamander-head {
+  animation: hanzakiBodyWalk 420ms ease-in-out infinite;
+}
+
+.hanzaki-page-salamander.is-walking .hanzaki-page-salamander-tail {
+  animation: hanzakiTailWalk 460ms ease-in-out infinite;
+}
+
+.hanzaki-page-active-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 18px;
+  border: 1px solid rgba(255, 250, 242, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.055);
+  padding: 20px;
+  backdrop-filter: blur(16px);
+}
+
+.hanzaki-page-active-panel p {
+  margin: 0 0 8px;
+  color: #ffb4a8;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hanzaki-page-active-panel h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2.4rem);
+  font-weight: 950;
+}
+
+.hanzaki-page-active-panel span {
+  display: block;
+  max-width: 560px;
+  margin-top: 8px;
+  color: rgba(255, 250, 242, 0.66);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.hanzaki-page-active-panel i {
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  box-shadow: 0 0 30px currentColor;
+  opacity: 0.9;
+  transition: background-color 620ms ease;
+}
+
+.hanzaki-page-cta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hanzaki-page-cta a {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 320ms ease,
+    border-color 320ms ease;
+}
+
+.hanzaki-page-cta a:first-child {
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 18px 42px rgba(220, 38, 38, 0.25);
+}
+
+.hanzaki-page-cta a:last-child {
+  border: 1px solid rgba(255, 250, 242, 0.18);
+  background: rgba(255, 250, 242, 0.08);
+  color: #fffaf2;
+}
+
+.hanzaki-page-cta a:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+@media (max-width: 767px) {
+  .hanzaki-page-section {
+    padding: 48px 0 36px;
+  }
+
+  .hanzaki-page-hero h1 {
+    font-size: clamp(2.85rem, 15vw, 4.2rem);
+  }
+
+  .hanzaki-page-hero p:last-child {
+    margin-top: 18px;
+  }
+
+  .hanzaki-page-playground {
+    margin-top: 26px;
+    padding-top: 92px;
+  }
+
+  .hanzaki-page-cards {
+    display: flex;
+    gap: 12px;
+    margin-inline: -12px;
+    overflow-x: auto;
+    padding: 8px 12px 18px;
+    scroll-padding-inline: 12px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .hanzaki-page-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hanzaki-page-card {
+    flex: 0 0 min(78vw, 310px);
+    min-height: 210px;
+    padding: 20px;
+    scroll-snap-align: center;
+  }
+
+  .hanzaki-page-card:hover,
+  .hanzaki-page-card.is-active {
+    transform: translate3d(0, -3px, 0);
+  }
+
+  .hanzaki-page-card-text {
+    min-height: 74px;
+  }
+
+  .hanzaki-page-salamander {
+    width: 118px;
+  }
+
+  .hanzaki-page-active-panel {
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .hanzaki-page-active-panel i {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+  }
+
+  .hanzaki-page-cta {
+    display: grid;
+  }
+
+  .hanzaki-page-cta a {
+    width: 100%;
+  }
+}
+
+@keyframes hanzakiBodyBreathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -1.5px, 0) scale(1.012);
+  }
+}
+
+@keyframes hanzakiBodyWalk {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes hanzakiGlowPulse {
+  0%,
+  100% {
+    opacity: 0.14;
+  }
+  50% {
+    opacity: 0.24;
+  }
+}
+
+@keyframes hanzakiLegForward {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes hanzakiLegBack {
+  from {
+    transform: rotate(9deg);
+  }
+  to {
+    transform: rotate(-9deg);
+  }
+}
+
+@keyframes hanzakiTailIdle {
+  0%,
+  100% {
+    transform: rotate(-1.8deg);
+  }
+  50% {
+    transform: rotate(2.1deg);
+  }
+}
+
+@keyframes hanzakiTailWalk {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
 .ig-marquee,
 .gallery-marquee {
   animation-timing-function: linear;
