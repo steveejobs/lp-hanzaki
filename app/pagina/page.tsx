@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { HanzakiExperiencePlayground } from "@/components/hanzaki/HanzakiExperiencePlayground";
+import { HanzakiExperienceLanding } from "@/components/hanzaki/HanzakiExperienceLanding";
 
 export const metadata: Metadata = {
-  title: "Escolha sua experiência Hanzaki",
+  title: "Hanzaki Experience",
   description:
-    "Página experimental da Hanzaki com uma salamandra branca caminhando entre experiências.",
+    "Landing experimental da Hanzaki com experiências de salão, delivery, sabores orientais e brasileiros em Araguaína.",
 };
 
 export default function Pagina() {
   return (
     <main className="hanzaki-page-shell">
-      <HanzakiExperiencePlayground />
+      <HanzakiExperienceLanding />
     </main>
   );
 }

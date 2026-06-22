@@ -242,7 +242,7 @@ img {
 .hanzaki-page-section {
   position: relative;
   min-height: 100svh;
-  padding: 72px 0 56px;
+  padding: 82px 0 64px;
 }
 
 .hanzaki-page-section::before {
@@ -255,6 +255,470 @@ img {
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
   background-size: 70px 70px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.hanzaki-exp-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 64px 0 76px;
+  overflow: hidden;
+}
+
+.hanzaki-exp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    radial-gradient(circle at 76% 24%, rgba(220, 38, 38, 0.22), transparent 24rem),
+    radial-gradient(circle at 24% 76%, rgba(245, 158, 11, 0.18), transparent 28rem);
+  background-size: 72px 72px, auto, auto;
+}
+
+.hanzaki-exp-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.78fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.hanzaki-exp-hero-copy {
+  max-width: 780px;
+}
+
+.hanzaki-exp-hero-logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.34));
+}
+
+.hanzaki-exp-kicker {
+  margin: 0 0 16px;
+  color: #ffb4a8;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hanzaki-exp-hero h1,
+.hanzaki-exp-section h2 {
+  margin: 0;
+  color: #fffaf2;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.hanzaki-exp-hero h1 {
+  max-width: 850px;
+  font-size: clamp(3.05rem, 7.2vw, 7.1rem);
+  line-height: 0.92;
+}
+
+.hanzaki-exp-hero-copy > p:last-of-type,
+.hanzaki-exp-section-head > p,
+.hanzaki-exp-atmosphere-grid > div:last-child > p {
+  color: rgba(255, 250, 242, 0.68);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.hanzaki-exp-hero-copy > p:last-of-type {
+  max-width: 640px;
+  margin: 24px 0 0;
+}
+
+.hanzaki-exp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hanzaki-exp-actions a {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 14px 22px;
+  color: #fffaf2;
+  font-size: 0.92rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 320ms ease,
+    background-color 320ms ease;
+}
+
+.hanzaki-exp-actions a:first-child {
+  background: #dc2626;
+  box-shadow: 0 18px 42px rgba(220, 38, 38, 0.24);
+}
+
+.hanzaki-exp-actions a:last-child {
+  border: 1px solid rgba(255, 250, 242, 0.18);
+  background: rgba(255, 250, 242, 0.08);
+}
+
+.hanzaki-exp-actions a:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.hanzaki-exp-hero-visual {
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.13);
+  border-radius: 8px;
+  background: #151110;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+}
+
+.hanzaki-exp-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 13, 12, 0.1), rgba(15, 13, 12, 0.72)),
+    radial-gradient(circle at 50% 24%, transparent, rgba(0, 0, 0, 0.32));
+}
+
+.hanzaki-exp-hero-image,
+.hanzaki-exp-cover,
+.hanzaki-exp-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hanzaki-exp-hero-salamander {
+  position: absolute;
+  left: 7%;
+  bottom: 108px;
+  z-index: 2;
+  width: 118px;
+}
+
+.hanzaki-exp-hero-note {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(255, 250, 242, 0.13);
+  border-radius: 8px;
+  background: rgba(15, 13, 12, 0.72);
+  padding: 16px 18px;
+  backdrop-filter: blur(14px);
+}
+
+.hanzaki-exp-hero-note span {
+  color: #ffb4a8;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hanzaki-exp-hero-note strong {
+  color: #fffaf2;
+  font-size: 0.94rem;
+}
+
+.hanzaki-exp-section {
+  position: relative;
+  padding: 88px 0;
+  overflow: hidden;
+}
+
+.hanzaki-exp-section-head {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.hanzaki-exp-section h2 {
+  font-size: clamp(2.35rem, 5vw, 5.2rem);
+  line-height: 0.95;
+}
+
+.hanzaki-exp-section-head > p:last-child {
+  max-width: 620px;
+  margin: 18px 0 0;
+}
+
+.hanzaki-exp-gallery {
+  background: linear-gradient(180deg, rgba(15, 13, 12, 0.2), rgba(15, 13, 12, 0.72));
+}
+
+.hanzaki-exp-gallery-rail {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  margin-inline: calc((100vw - min(100vw - 32px, 1180px)) / -2);
+  padding: 6px 0 14px;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.hanzaki-exp-gallery-track {
+  display: flex;
+  min-width: max-content;
+  gap: 16px;
+  animation: hanzakiGalleryFlow 68s linear infinite;
+}
+
+.hanzaki-exp-gallery-item {
+  position: relative;
+  width: min(25vw, 280px);
+  min-width: 220px;
+  height: 360px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.12);
+  border-radius: 8px;
+  background: #151110;
+}
+
+.hanzaki-exp-gallery-item figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  border: 1px solid rgba(255, 250, 242, 0.15);
+  border-radius: 999px;
+  background: rgba(15, 13, 12, 0.68);
+  color: #fffaf2;
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 8px 11px;
+  backdrop-filter: blur(10px);
+}
+
+.hanzaki-exp-atmosphere {
+  background:
+    radial-gradient(circle at 84% 20%, rgba(220, 38, 38, 0.14), transparent 26rem),
+    #100e0d;
+}
+
+.hanzaki-exp-atmosphere-grid,
+.hanzaki-exp-location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.85fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.hanzaki-exp-atmosphere-image,
+.hanzaki-exp-location-image {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.12);
+  border-radius: 8px;
+  background: #171312;
+}
+
+.hanzaki-exp-atmosphere-grid h2,
+.hanzaki-exp-location-grid h2 {
+  margin: 0;
+  color: #fffaf2;
+  font-size: clamp(2.35rem, 4.8vw, 5rem);
+  font-weight: 950;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hanzaki-exp-atmosphere-grid > div:last-child > p {
+  margin: 20px 0 0;
+}
+
+.hanzaki-exp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hanzaki-exp-chips span {
+  border: 1px solid rgba(255, 250, 242, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.07);
+  color: #fffaf2;
+  font-size: 0.86rem;
+  font-weight: 900;
+  padding: 10px 14px;
+}
+
+.hanzaki-exp-flavors {
+  background: linear-gradient(180deg, #100e0d, #181311);
+}
+
+.hanzaki-exp-flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hanzaki-exp-flavor-card,
+.hanzaki-exp-testimonial-grid blockquote {
+  border: 1px solid rgba(255, 250, 242, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.08), rgba(255, 250, 242, 0.035)),
+    rgba(16, 13, 12, 0.82);
+}
+
+.hanzaki-exp-flavor-card {
+  min-height: 238px;
+  padding: 22px;
+}
+
+.hanzaki-exp-flavor-card span {
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-bottom: 52px;
+  border-radius: 99px;
+  background: #dc2626;
+}
+
+.hanzaki-exp-flavor-card h3 {
+  margin: 0;
+  color: #fffaf2;
+  font-size: 1.3rem;
+  font-weight: 950;
+  line-height: 1.1;
+}
+
+.hanzaki-exp-flavor-card p {
+  margin: 14px 0 0;
+  color: rgba(255, 250, 242, 0.64);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.hanzaki-exp-testimonials {
+  background: #151110;
+}
+
+.hanzaki-exp-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hanzaki-exp-testimonial-grid blockquote {
+  margin: 0;
+  color: rgba(255, 250, 242, 0.82);
+  font-size: 1.04rem;
+  font-weight: 750;
+  line-height: 1.55;
+  padding: 22px;
+}
+
+.hanzaki-exp-location {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(245, 158, 11, 0.14), transparent 26rem),
+    #100e0d;
+}
+
+.hanzaki-exp-location-grid {
+  grid-template-columns: minmax(0, 0.88fr) minmax(340px, 1fr);
+}
+
+.hanzaki-exp-details {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 0;
+}
+
+.hanzaki-exp-details div {
+  border-bottom: 1px solid rgba(255, 250, 242, 0.1);
+  padding-bottom: 14px;
+}
+
+.hanzaki-exp-details dt {
+  margin-bottom: 5px;
+  color: #ffb4a8;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hanzaki-exp-details dd {
+  margin: 0;
+  color: rgba(255, 250, 242, 0.72);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.hanzaki-exp-details a {
+  color: #fffaf2;
+  text-decoration: none;
+}
+
+.hanzaki-exp-footer {
+  border-top: 1px solid rgba(255, 250, 242, 0.1);
+  background: #0f0d0c;
+  color: #fffaf2;
+  padding: 28px 0;
+}
+
+.hanzaki-exp-footer .container-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.hanzaki-exp-footer img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.hanzaki-exp-footer p {
+  margin: 0;
+  color: rgba(255, 250, 242, 0.66);
+  font-weight: 800;
+}
+
+.hanzaki-exp-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hanzaki-exp-footer a {
+  color: rgba(255, 250, 242, 0.72);
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.hanzaki-exp-footer a:hover {
+  color: #fffaf2;
+}
+
+@keyframes hanzakiGalleryFlow {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-100% - 16px), 0, 0);
+  }
 }
 
 .hanzaki-page-hero {
@@ -304,7 +768,24 @@ img {
   position: relative;
   z-index: 1;
   margin-top: 36px;
-  padding-top: 112px;
+  padding-top: 96px;
+}
+
+.hanzaki-page-salamander-track {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  top: 62px;
+  height: 1px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 250, 242, 0.2), transparent),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 250, 242, 0.13) 0 7px,
+      transparent 7px 20px
+    );
+  opacity: 0.34;
 }
 
 .hanzaki-page-cards {
@@ -317,12 +798,12 @@ img {
 .hanzaki-page-card {
   position: relative;
   min-height: 238px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 250, 242, 0.13);
+  overflow: visible;
+  border: 1px solid rgba(255, 250, 242, 0.1);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 250, 242, 0.095), rgba(255, 250, 242, 0.035)),
-    rgba(16, 13, 12, 0.76);
+    linear-gradient(180deg, rgba(255, 250, 242, 0.072), rgba(255, 250, 242, 0.026)),
+    rgba(16, 13, 12, 0.7);
   color: #fffaf2;
   cursor: pointer;
   display: flex;
@@ -369,11 +850,14 @@ img {
 
 .hanzaki-page-card:hover,
 .hanzaki-page-card.is-active {
-  transform: translate3d(0, -6px, 0);
-  border-color: color-mix(in srgb, var(--experience-color) 54%, rgba(255, 250, 242, 0.18));
+  transform: translate3d(0, -7px, 0);
+  border-color: color-mix(in srgb, var(--experience-color) 62%, rgba(255, 250, 242, 0.2));
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.12), rgba(255, 250, 242, 0.04)),
+    rgba(18, 14, 13, 0.9);
   box-shadow:
     0 22px 55px rgba(0, 0, 0, 0.28),
-    0 0 34px color-mix(in srgb, var(--experience-color) 26%, transparent);
+    0 0 28px color-mix(in srgb, var(--experience-color) 18%, transparent);
 }
 
 .hanzaki-page-card.is-active::before {
@@ -410,7 +894,7 @@ img {
 
 .hanzaki-page-card-text {
   min-height: 82px;
-  color: rgba(255, 250, 242, 0.67);
+  color: rgba(255, 250, 242, 0.6);
   font-size: 0.95rem;
   font-weight: 650;
   line-height: 1.55;
@@ -424,11 +908,10 @@ img {
   left: 0;
   top: 0;
   z-index: 4;
-  width: 154px;
+  width: 112px;
   opacity: 0;
   pointer-events: none;
   transition:
-    transform 860ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 300ms ease,
     filter 620ms ease;
   will-change: transform;
@@ -446,13 +929,19 @@ img {
   height: 35%;
   border-radius: 999px;
   background: var(--salamander-glow);
-  filter: blur(22px);
-  opacity: 0.18;
+  filter: blur(18px);
+  opacity: 0.12;
   transform: translate3d(0, 10px, 0);
   transition:
     background-color 620ms ease,
     opacity 620ms ease;
   animation: hanzakiGlowPulse 3.8s ease-in-out infinite;
+}
+
+.hanzaki-page-salamander-rig,
+.hanzaki-page-salamander-rig-stage {
+  position: relative;
+  width: 100%;
 }
 
 .hanzaki-page-salamander-svg {
@@ -462,8 +951,8 @@ img {
   height: auto;
   overflow: visible;
   filter:
-    drop-shadow(0 12px 18px rgba(0, 0, 0, 0.42))
-    drop-shadow(0 0 10px var(--salamander-glow));
+    drop-shadow(0 10px 15px rgba(0, 0, 0, 0.38))
+    drop-shadow(0 0 7px var(--salamander-glow));
 }
 
 .hanzaki-page-salamander-body,
@@ -484,7 +973,7 @@ img {
   stroke: var(--salamander-accent);
   stroke-linecap: round;
   stroke-width: 3.8;
-  opacity: 0.58;
+  opacity: 0.44;
   transition:
     stroke 620ms ease,
     opacity 620ms ease;
@@ -511,21 +1000,51 @@ img {
   fill: none;
   stroke: var(--salamander-fill);
   stroke-linecap: round;
-  stroke-width: 9;
+  stroke-width: 7.2;
 }
 
 .hanzaki-page-salamander-toes {
   fill: none;
   stroke: color-mix(in srgb, var(--salamander-accent) 36%, #ffffff);
   stroke-linecap: round;
-  stroke-width: 4.2;
-  opacity: 0.72;
+  stroke-width: 3.1;
+  opacity: 0.62;
   transition: stroke 620ms ease;
 }
 
 .hanzaki-page-salamander-leg {
   transform-box: fill-box;
   transform-origin: center;
+}
+
+.hanzaki-page-sushi {
+  position: absolute;
+  right: 24px;
+  top: -28px;
+  z-index: 2;
+  width: 30px;
+  height: 23px;
+  border: 1px solid rgba(255, 250, 242, 0.28);
+  border-radius: 48% 52% 46% 54%;
+  background:
+    radial-gradient(circle at 50% 50%, #ef4444 0 22%, transparent 23%),
+    radial-gradient(circle at 48% 52%, #fffaf2 0 48%, transparent 49%),
+    linear-gradient(135deg, #171312, #2b211d);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    0 0 18px rgba(239, 68, 68, 0.18);
+}
+
+.hanzaki-page-sushi span {
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  width: 15px;
+  height: 8px;
+  border-radius: 999px;
+  background: #f59e0b;
+  opacity: 0.82;
+  transform: rotate(-16deg);
 }
 
 .hanzaki-page-salamander.is-walking .hanzaki-page-leg-front-left,
@@ -551,14 +1070,30 @@ img {
   position: relative;
   z-index: 1;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 18px;
   margin-top: 18px;
   border: 1px solid rgba(255, 250, 242, 0.1);
   border-radius: 8px;
   background: rgba(255, 250, 242, 0.055);
-  padding: 20px;
+  padding: 16px;
   backdrop-filter: blur(16px);
+}
+
+.hanzaki-page-active-media {
+  position: relative;
+  width: 132px;
+  min-width: 132px;
+  height: 92px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.12);
+  border-radius: 8px;
+  background: #151110;
+}
+
+.hanzaki-page-active-media img {
+  object-fit: cover;
 }
 
 .hanzaki-page-active-panel p {
@@ -583,6 +1118,27 @@ img {
   color: rgba(255, 250, 242, 0.66);
   font-weight: 650;
   line-height: 1.55;
+}
+
+.hanzaki-page-active-panel a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 14px;
+  border: 1px solid rgba(255, 250, 242, 0.16);
+  border-radius: 999px;
+  color: #fffaf2;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 9px 12px;
+  text-decoration: none;
+  transition:
+    border-color 260ms ease,
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hanzaki-page-active-panel a:hover {
+  border-color: rgba(255, 250, 242, 0.34);
+  transform: translate3d(0, -1px, 0);
 }
 
 .hanzaki-page-active-panel i {
@@ -638,13 +1194,151 @@ img {
   transform: translate3d(0, -2px, 0);
 }
 
+@media (max-width: 900px) and (min-width: 768px) {
+  .hanzaki-page-playground {
+    padding-top: 82px;
+  }
+
+  .hanzaki-page-salamander-track {
+    top: 52px;
+  }
+
+  .hanzaki-page-cards {
+    display: flex;
+    gap: 12px;
+    margin-inline: -16px;
+    overflow-x: auto;
+    padding: 8px 16px 20px;
+    scroll-padding-inline: 16px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .hanzaki-page-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hanzaki-page-card {
+    flex: 0 0 min(42vw, 286px);
+    min-height: 218px;
+    scroll-snap-align: center;
+  }
+
+  .hanzaki-page-salamander {
+    width: 86px;
+  }
+}
+
 @media (max-width: 767px) {
+  .hanzaki-exp-hero {
+    min-height: auto;
+    padding: 34px 0 54px;
+  }
+
+  .hanzaki-exp-hero-grid,
+  .hanzaki-exp-atmosphere-grid,
+  .hanzaki-exp-location-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hanzaki-exp-hero-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 22px;
+  }
+
+  .hanzaki-exp-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 4.45rem);
+  }
+
+  .hanzaki-exp-actions {
+    display: grid;
+  }
+
+  .hanzaki-exp-actions a {
+    width: 100%;
+  }
+
+  .hanzaki-exp-hero-visual {
+    min-height: 390px;
+  }
+
+  .hanzaki-exp-hero-salamander {
+    left: 8%;
+    bottom: 88px;
+    width: 76px;
+  }
+
+  .hanzaki-exp-hero-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hanzaki-exp-section {
+    padding: 56px 0;
+  }
+
+  .hanzaki-exp-section h2,
+  .hanzaki-exp-atmosphere-grid h2,
+  .hanzaki-exp-location-grid h2 {
+    font-size: clamp(2.25rem, 12vw, 3.8rem);
+  }
+
+  .hanzaki-exp-gallery-rail {
+    overflow-x: auto;
+    margin-inline: -12px;
+    padding: 6px 12px 16px;
+    scroll-snap-type: x proximity;
+    mask-image: none;
+    scrollbar-width: none;
+  }
+
+  .hanzaki-exp-gallery-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hanzaki-exp-gallery-track {
+    animation-duration: 46s;
+  }
+
+  .hanzaki-exp-gallery-item {
+    width: 68vw;
+    min-width: 218px;
+    height: 300px;
+    scroll-snap-align: center;
+  }
+
+  .hanzaki-exp-atmosphere-image,
+  .hanzaki-exp-location-image {
+    min-height: 360px;
+  }
+
+  .hanzaki-exp-flavor-grid,
+  .hanzaki-exp-testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hanzaki-exp-flavor-card {
+    min-height: 190px;
+  }
+
+  .hanzaki-exp-flavor-card span {
+    margin-bottom: 34px;
+  }
+
+  .hanzaki-exp-footer .container-page {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .hanzaki-page-section {
-    padding: 48px 0 36px;
+    padding: 54px 0 38px;
   }
 
   .hanzaki-page-hero h1 {
-    font-size: clamp(2.85rem, 15vw, 4.2rem);
+    font-size: clamp(2.45rem, 12.5vw, 3.75rem);
   }
 
   .hanzaki-page-hero p:last-child {
@@ -652,8 +1346,15 @@ img {
   }
 
   .hanzaki-page-playground {
-    margin-top: 26px;
-    padding-top: 92px;
+    margin-top: 22px;
+    padding-top: 68px;
+  }
+
+  .hanzaki-page-salamander-track {
+    left: 8px;
+    right: 8px;
+    top: 43px;
+    opacity: 0.24;
   }
 
   .hanzaki-page-cards {
@@ -672,9 +1373,9 @@ img {
   }
 
   .hanzaki-page-card {
-    flex: 0 0 min(78vw, 310px);
-    min-height: 210px;
-    padding: 20px;
+    flex: 0 0 min(84vw, 300px);
+    min-height: 198px;
+    padding: 18px;
     scroll-snap-align: center;
   }
 
@@ -684,22 +1385,45 @@ img {
   }
 
   .hanzaki-page-card-text {
-    min-height: 74px;
+    min-height: 68px;
+    font-size: 0.9rem;
   }
 
   .hanzaki-page-salamander {
-    width: 118px;
+    width: 66px;
+  }
+
+  .hanzaki-page-sushi {
+    right: 18px;
+    top: -27px;
+    width: 29px;
+    height: 22px;
   }
 
   .hanzaki-page-active-panel {
     align-items: flex-start;
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 14px;
     margin-top: 10px;
   }
 
+  .hanzaki-page-active-media {
+    width: 88px;
+    min-width: 88px;
+    height: 86px;
+  }
+
+  .hanzaki-page-active-panel h2 {
+    font-size: 1.28rem;
+  }
+
+  .hanzaki-page-active-panel span {
+    font-size: 0.9rem;
+  }
+
   .hanzaki-page-active-panel i {
-    width: 42px;
-    min-width: 42px;
-    height: 42px;
+    display: none;
   }
 
   .hanzaki-page-cta {
@@ -708,6 +1432,49 @@ img {
 
   .hanzaki-page-cta a {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hanzaki-exp-hero-copy > p:last-of-type,
+  .hanzaki-page-hero p:last-child {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .hanzaki-exp-hero-visual {
+    min-height: 360px;
+  }
+
+  .hanzaki-exp-hero-salamander {
+    bottom: 82px;
+    width: 68px;
+  }
+
+  .hanzaki-exp-gallery-item {
+    width: 76vw;
+    min-width: 212px;
+    height: 280px;
+  }
+
+  .hanzaki-page-cards {
+    padding-bottom: 16px;
+  }
+
+  .hanzaki-page-card {
+    flex-basis: min(86vw, 292px);
+    min-height: 190px;
+  }
+
+  .hanzaki-page-active-panel {
+    grid-template-columns: 76px 1fr;
+    padding: 12px;
+  }
+
+  .hanzaki-page-active-media {
+    width: 76px;
+    min-width: 76px;
+    height: 78px;
   }
 }
 
@@ -858,6 +1625,7 @@ img {
     transform: none !important;
   }
   .gallery-marquee,
+  .hanzaki-exp-gallery-track,
   .ig-marquee {
     animation: none !important;
     transform: none !important;
